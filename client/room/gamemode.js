@@ -28,8 +28,6 @@ inventory.Build.Value = false;
 const blueTeam = teams.create_team_blue();
 blueTeam.Spawns.RespawnTime.Value = 0;
 
-room.Ui.GetContext().Hint.Value = "Hint/GoParcour";
-
 stateProp.OnValue.Add(OnState);
 function OnState() {
 	const spawnsRoomContext = room.Spawns.GetContext();
@@ -46,7 +44,6 @@ function OnState() {
 	}
 }
 
-// визуализируем конец маршрута
 if (room.GameMode.Parameters.GetBool(ViewEndParameterName)) {
 	var endView = room.AreaViewService.GetContext().Get("EndView");
 	endView.Color = gnmeEndAreaColor;
@@ -54,7 +51,6 @@ if (room.GameMode.Parameters.GetBool(ViewEndParameterName)) {
 	endView.Enable = true;
 }
 
-// настраиваем триггер конца игры
 const endTrigger = room.AreaPlayerTriggerService.Get("EndTrigger");
 endTrigger.Tags = [EndAreaTag];
 endTrigger.Enable = true;
