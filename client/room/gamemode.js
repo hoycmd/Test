@@ -41,7 +41,7 @@ function OnState() {
 	}
 }
 
-@@ -56,28 +41,9 @@ endTrigger.Tags = [EndAreaTag];
+endTrigger.Tags = [EndAreaTag];
 endTrigger.Enable = true;
 endTrigger.OnEnter.Add(function (player) {
 	endTrigger.Enable = false;
