@@ -43,7 +43,7 @@ function OnState() {
 	}
 }
 
-
+const endTrigger = room.AreaPlayerTriggerService.Get("EndTrigger");
 endTrigger.Tags = [EndAreaTag];
 endTrigger.Enable = true;
 endTrigger.OnEnter.Add(function (player) {
