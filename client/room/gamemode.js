@@ -23,7 +23,6 @@ function OnState() {
 		case GameStateValue:
 			break;
 		case EndOfMatchStateValue:
-			room.Game.GameOver(room.LeaderBoard.GetPlayers());
 			mainTimer.Restart(5);
 	}
 }
