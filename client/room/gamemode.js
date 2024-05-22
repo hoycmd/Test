@@ -43,6 +43,13 @@ function OnState() {
 	}
 }
 
+if (room.GameMode.Parameters.GetBool(ViewEndParameterName)) {
+	var endView = room.AreaViewService.GetContext().Get("EndView");
+	endView.Color = gnmeEndAreaColor;
+	endView.Tags = [EndAreaTag];
+	endView.Enable = true;
+}
+
 const endTrigger = room.AreaPlayerTriggerService.Get("EndTrigger");
 endTrigger.Tags = [EndAreaTag];
 endTrigger.Enable = true;
