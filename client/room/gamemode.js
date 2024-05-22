@@ -9,7 +9,6 @@ const EndOfMatchStateValue = "EndOfMatch";
 const EndAreaTag = "parcourend";
 const CurSpawnPropName = "CurSpawn";
 const ViewEndParameterName = "ViewEnd";
-const LeaderBoardProp = "Leader";
 
 const mainTimer = room.Timers.GetContext().Get("Main");
 var endAreas = room.AreaService.GetByTag(EndAreaTag);
@@ -50,22 +49,6 @@ endTrigger.OnEnter.Add(function (player) {
 });
 
 mainTimer.OnTimer.Add(function () { Game.RestartGame(); });
-
-room.LeaderBoard.PlayerLeaderBoardValues = [
-	{
-		Value: LeaderBoardProp,
-		DisplayName: "Statistics/Scores",
-		ShortDisplayName: "Statistics/ScoresShort"
-	}
-];
-room.LeaderBoard.TeamLeaderBoardValue = {
-	Value: LeaderBoardProp,
-	DisplayName: "Statistics/Scores",
-	ShortDisplayName: "Statistics/Scores"
-};
-room.LeaderBoard.PlayersWeightGetter.Set(function (player) {
-	return player.Properties.Get(LeaderBoardProp).Value;
-});
 
 room.Teams.OnRequestJoinTeam.Add(function (player, team) { team.Add(player); });
 room.Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn() });
