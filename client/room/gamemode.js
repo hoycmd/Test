@@ -6,7 +6,6 @@ import * as teams from './default_teams.js';
 const GameStateValue = "Game";
 const EndOfMatchStateValue = "EndOfMatch";
 const EndAreaTag = "parcourend";
-const CurSpawnPropName = "CurSpawn";
 const ViewEndParameterName = "ViewEnd";
 const LeaderBoardProp = "Leader";
 
