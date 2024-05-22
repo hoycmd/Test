@@ -2,6 +2,8 @@ import * as basic from 'pixel_combats/basic';
 import * as room from 'pixel_combats/room';
 import * as teams from './default_teams.js';
 
+const EndOfMatchTime = 3;
+
 const GameStateValue = "Game";
 const EndOfMatchStateValue = "EndOfMatch";
 const EndAreaTag = "parcourend";
@@ -36,10 +38,11 @@ function OnState() {
 			spawnsRoomContext.enable = false;
 			spawnsRoomContext.Despawn();
 			room.Game.GameOver(room.LeaderBoard.GetPlayers());
-			mainTimer.Restart(5);
+			mainTimer.Restart(EndOfMatchTime);
 			break;
 	}
 }
+
 
 endTrigger.Tags = [EndAreaTag];
 endTrigger.Enable = true;
