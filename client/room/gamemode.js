@@ -2,12 +2,9 @@ import * as basic from 'pixel_combats/basic';
 import * as room from 'pixel_combats/room';
 import * as teams from './default_teams.js';
 
-const EndOfMatchTime = 3;
-
 const GameStateValue = "Game";
 const EndOfMatchStateValue = "EndOfMatch";
 const EndAreaTag = "parcourend";
-const CurSpawnPropName = "CurSpawn";
 const ViewEndParameterName = "ViewEnd";
 
 const mainTimer = room.Timers.GetContext().Get("Main");
@@ -22,14 +19,10 @@ function OnState() {
 	const spawnsRoomContext = room.Spawns.GetContext();
 	switch (stateProp.Value) {
 		case GameStateValue:
-			spawnsRoomContext.enable = true;
 			break;
 		case EndOfMatchStateValue:
-			spawnsRoomContext.enable = false;
-			spawnsRoomContext.Despawn();
 			room.Game.GameOver(room.LeaderBoard.GetPlayers());
-			mainTimer.Restart(EndOfMatchTime);
-			break;
+			mainTimer.Restart(5);
 	}
 }
 
