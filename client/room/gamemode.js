@@ -16,9 +16,9 @@ const blueTeam = teams.create_team_blue();
 
 stateProp.OnValue.Add(OnState);
 function OnState() {
-	const spawnsRoomContext = room.Spawns.GetContext();
 	switch (stateProp.Value) {
 		case GameStateValue:
+			mainTimer.Restart(5);
 			break;
 		case EndOfMatchStateValue:
 			room.Game.GameOver(room.LeaderBoard.GetPlayers());
