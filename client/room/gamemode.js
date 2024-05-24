@@ -53,4 +53,6 @@ function InitializeMap() {
 
 InitializeMap();
 
-stateProp.Value = GameStateValue;
+stateProp.Value = GameStateValue; {
+        mainTimer.Restart(5);
+}
