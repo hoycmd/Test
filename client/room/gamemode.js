@@ -2,7 +2,7 @@ import * as basic from 'pixel_combats/basic';
 import * as room from 'pixel_combats/room';
 import * as teams from './default_teams.js';
 
-const ViewEndParameterName = "ViewEnd";
+const ViewEnd = "ViewEnd";
 
 var endAreas = room.AreaService.GetByTag(EndAreaTag);
 const gnmeEndAreaColor = new basic.Color(0, 0, 1, 0);
