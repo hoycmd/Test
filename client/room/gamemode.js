@@ -18,9 +18,6 @@ endView.Enable = true;
 const endTrigger = room.AreaPlayerTriggerService.Get("EndTrigger");
 endTrigger.Tags = [EndAreaTag];
 endTrigger.Enable = true;
-endTrigger.OnEnter.Add(function (player) {
-	player.Ui.Hint.Value = "Da";
-});
 
 room.Teams.OnRequestJoinTeam.Add(function (player, team) { team.Add(player); });
 room.Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn() });
