@@ -2,6 +2,7 @@ import * as basic from 'pixel_combats/basic';
 import * as room from 'pixel_combats/room';
 import * as teams from './default_teams.js';
 
+const EndAreaTag = "EndAreaTag";
 const ViewEnd = "ViewEnd";
 
 var endAreas = room.AreaService.GetByTag(EndAreaTag);
