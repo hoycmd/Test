@@ -13,11 +13,11 @@ const blueTeam = teams.create_team_blue();
 
 var endView = room.AreaViewService.GetContext().Get("EndView");
 endView.Color = gnmeEndAreaColor;
-endView.Tags = [EndAreaTag];
+endView.Tags = ["EndAreaTag"];
 endView.Enable = true;
 
 const endTrigger = room.AreaPlayerTriggerService.Get("EndTrigger");
-endTrigger.Tags = [EndAreaTag];
+endTrigger.Tags = ["EndAreaTag"];
 endTrigger.Enable = true;
 
 room.Teams.OnRequestJoinTeam.Add(function (player, team) { team.Add(player); });
