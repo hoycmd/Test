@@ -6,7 +6,7 @@ const EndAreaTag = "EndAreaTag";
 const EndView = "EndView";
 const EndTrigger = "EndTrigger";
 
-var endAreas = room.AreaService.GetByTag(EndAreaTag);
+var endAreas = room.AreaService.GetByTag("EndAreaTag");
 const gnmeEndAreaColor = new basic.Color(0, 0, 1, 0);
 
 const blueTeam = teams.create_team_blue();
@@ -25,7 +25,7 @@ room.Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn() });
 
 room.Map.OnLoad.Add(InitializeMap);
 function InitializeMap() {
-	endAreas = room.AreaService.GetByTag(EndAreaTag);
+	endAreas = room.AreaService.GetByTag("EndAreaTag");
 }
 
 InitializeMap();
