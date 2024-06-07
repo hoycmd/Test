@@ -3,13 +3,15 @@ import * as room from 'pixel_combats/room';
 import * as teams from './default_teams.js';
 
 const EndAreaTag = "EndAreaTag";
+const EndView = "EndView";
+const EndTrigger = "EndTrigger";
 
 var endAreas = room.AreaService.GetByTag(EndAreaTag);
 const gnmeEndAreaColor = new basic.Color(0, 0, 1, 0);
 
 const blueTeam = teams.create_team_blue();
 
-var endView = room.AreaViewService.GetContext().Get("endView");
+var endView = room.AreaViewService.GetContext().Get("EndView");
 endView.Color = gnmeEndAreaColor;
 endView.Tags = [EndAreaTag];
 endView.Enable = true;
