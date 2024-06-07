@@ -13,7 +13,6 @@ endView.Tags = ["EndAreaTag"];
 endView.Enable = true;
 
 const endTrigger = room.AreaPlayerTriggerService.Get("EndTrigger");
-endTrigger.Color = gnmeEndAreaColor;
 endTrigger.Tags = ["EndAreaTag"];
 endTrigger.Enable = true;
 
