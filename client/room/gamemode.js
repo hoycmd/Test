@@ -6,7 +6,7 @@ const gnmeEndAreaColor = new basic.Color(0, 0, 1, 0);
 
 const blueTeam = teams.create_team_blue();
 
-var endView = room.AreaViewService.GetContext().Get("EndV");
+var endView = room.AreaViewService.GetContext().Get("EndT");
 endView.Color = gnmeEndAreaColor;
 endView.Tags = ["End"];
 endView.Enable = true;
